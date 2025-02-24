@@ -8,6 +8,10 @@ let amigos = [];
 
 let listaAmigos = document.getElementById('listaAmigos');
 
+//Declaración de variable: captura en una variable la lista <ul></ul> (a través de su id: 'resultado') donde se van a insertar el amigo sorteado.
+
+let listaResultado = document.getElementById('resultado')
+
 //Funcion para agregar amigos al hacer click en el botón añadir:
 
 function agregarAmigo(){
@@ -35,5 +39,21 @@ function mostrarLista(){
     listaAmigos.innerHTML = '';
     for (let i = 0; i < amigos.length; i++) {
         listaAmigos.innerHTML += `<li>${amigos[i]}</li>`;
+    }
+}
+
+//Funcion para sortear amigo aleatoriamente y mostrarlo en la lista <ul></ul> llamada resultado:
+
+function sortearAmigo(){
+    let numeroMaximo = amigos.length;
+    let min = 0;
+    let indiceAleatorio =  Math.floor(Math.random(min, numeroMaximo)*numeroMaximo);
+    if (amigos == '') {
+        alert('No hay amigos para sortear!');
+    } else if (amigos.length == 1){
+        alert('Agregue, al menos, 2 amigos para sortear!');
+    } else {
+        listaAmigos.innerHTML = '';
+        listaResultado.innerHTML = `El amigo sorteado es: ${'<li>'}${amigos[indiceAleatorio]}${'</li>'}`;
     }
 }
