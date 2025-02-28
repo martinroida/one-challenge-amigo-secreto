@@ -1,6 +1,6 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 
-//Declaracion de vector para guardar amigos: en esta lista van a ir almacenados los amigos que se van a ir cargando.
+//Declaración de vector para guardar amigos: en esta lista van a ir almacenados los amigos que se van a ir cargando.
 
 let amigos = [];
 
@@ -10,15 +10,14 @@ let listaAmigos = document.getElementById('listaAmigos');
 
 //Declaración de variable: captura en una variable la lista <ul></ul> (a través de su id: 'resultado') donde se van a insertar el amigo sorteado.
 
-let listaResultado = document.getElementById('resultado')
+let listaResultado = document.getElementById('resultado');
 
-//Funcion para agregar amigos al hacer click en el botón añadir:
+//Función para agregar amigos al hacer click en el botón añadir.
 
 function agregarAmigo(){
-    //to-do: llevar esta variable por fuera de la función:
+    //Captura el valor cargado en la caja de texto (id="amigo") y lo guarda en una variable.
     let amigo = document.getElementById('amigo').value;
-    //Validación: verifica si la caja está vacía.
-    //to-do: ver de que forma implementar una validación con números, simbolos, etc.
+    //Validación: verifica si la caja está vacía, sino agrega el contenido de la caja de texto a la lista amigos[] mediante el método push.
     if (amigo == ""){
         alert('Por favor, ingrese un nombre.');
     } else {
@@ -28,12 +27,13 @@ function agregarAmigo(){
     }
 }
 
-//Funcion para limpiar caja de texto:
+//Función para limpiar la caja de texto: se utiliza el método querySelector.
+
 function limpiarCaja(){
     document.querySelector('#amigo').value = '';
 }
 
-//Funcion para mostrar la lista de amigos en index.html:
+// Función para mostrar la lista de amigos en index.html: primero vacía la lista <ul></ul> y luego recorre el vector, agregando cada elemento del mismo en una tag <li></li> dentro del html.
 
 function mostrarLista(){
     listaAmigos.innerHTML = '';
@@ -42,7 +42,7 @@ function mostrarLista(){
     }
 }
 
-//Funcion para sortear amigo aleatoriamente y mostrarlo en la lista <ul></ul> llamada resultado:
+//Función para sortear un amigo aleatoriamente y mostrarlo en la lista <ul></ul> llamada resultado.
 
 function sortearAmigo(){
     let numeroMaximo = amigos.length;
